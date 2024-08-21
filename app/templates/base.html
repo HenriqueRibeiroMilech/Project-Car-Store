@@ -72,8 +72,21 @@
   <header>
     <nav>
       <ul>
+        {% if user.is_authenticated %} <!--se o usuario estiver logado-->
+          <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>  <!--vai aparecer esse botão-->
+        {% endif %}
+
+        {% if not user.is_authenticated %}  <!--se o usuario não estiver logado-->
+          <li><a href="{% url 'register' %}">Cadastre-se</a></li> <!--vai aparecer esses botão-->
+          <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+
         <li><a href="{% url 'cars_list' %}">Carros</a></li>
-        <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>
+        <!--cadastrar carro-->
+
+        {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}">Sair</a></li>
+        {% endif %}
       </ul>
     </nav>
   </header>
