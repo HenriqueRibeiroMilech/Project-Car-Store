@@ -19,8 +19,8 @@ def register_view(request):
 
 def login_view(request):
     if request.method == 'POST': #Verifica se o http ta mandando um post(enviando algo para o sistema)
-        username = request.POST["username"]
-        password = request.POST["password"]
+        username = request.POST["username"] #Salva o username que o usuario digito em uma variavel
+        password = request.POST["password"] #mesma cois mas em password
         user = authenticate(request, username=username, password=password) #verifica se o usuario e senha está correto e salva na variavel (import authenticate)
 
         if user is not None: # se o usuario não for nulo
@@ -37,5 +37,5 @@ def login_view(request):
 
 
 def logout_view(request):
-    logout(request) #faz o logout da conta
+    logout(request) #faz o logout da conta (import logout)
     return redirect('cars_list') #retorna para a tela de carros

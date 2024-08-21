@@ -5,9 +5,10 @@
         {% csrf_token %}
         
         <table>
-            {{login_form.as_table}}
-        </table>
+            {{login_form.as_table}} <!--Campos do formularios do sistema de registro-->
+        </table>                    <!--as_table organiza e deixa mais bonito-->
+                                    <!--mas precisa tar dentro deu um <table>-->
 
-        <input type="submit" value="Entrar">
+        <input type="submit" value="Entrar"> <!-- botão-->
     </form>
 {% endblock %}
