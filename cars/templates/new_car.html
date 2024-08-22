@@ -5,7 +5,7 @@
         {% csrf_token %}  <!-- proteçao do django contra hackers do django para formularios -->
 
         <table>
-            {{ new_car_form.as_table}} <!--as table deixa em formato de tabela-->
+            {{ form.as_table}} <!--tem q alterar só para form-->
         </table>
 
         <input type="submit" value="Cadastrar" class="btn btn-primary"> <!--envia o formulario-->
