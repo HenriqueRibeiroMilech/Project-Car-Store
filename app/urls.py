@@ -8,7 +8,8 @@ from accounts.views import register_view, login_view, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('cars/', cars_view, name='cars_list'), #Url da pagina que mostra os carros
+        #direcionamento da url
+    path('cars/', cars_view, name='cars_list'), #apelido para usar no sistema django
     path('register/', register_view, name='register'), #Url da pagina para se registrar
     path('login/', login_view, name='login'),   #Url da pagina para logar
     path('logout/', logout_view, name='logout'),   #Url da pagina para deslogar
